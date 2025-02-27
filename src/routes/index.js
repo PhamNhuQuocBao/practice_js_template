@@ -1,3 +1,5 @@
+import Layout from "../views/layouts/layout";
+
 export class Router {
   constructor(routes) {
     this.routes = routes;
@@ -17,8 +19,8 @@ export class Router {
   loadRoute(path = location.pathname) {
     const route = this.routes.find((r) => r.path === path);
     if (route) {
-      const view = new route.controller(new route.view());
-      document.getElementById("app").innerHTML = view.render();
+      document.querySelector("#app").innerHTML = Layout();
+      new route.controller(new route.view());
     } else {
       document.getElementById("app").innerHTML = "<h2>404 Not Found</h2>";
     }

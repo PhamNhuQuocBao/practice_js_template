@@ -1,3 +1,5 @@
 export class CategoryController {
-  constructor() {}
+  constructor(view) {
+    this.view = view;
+  }
 }

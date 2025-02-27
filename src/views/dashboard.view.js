@@ -1,10 +1,8 @@
 export class DashboardView {
-  constructor() {}
+  constructor() {
+    this.render();
+  }
   render() {
-    return `
-        <div>
-            <h1>Hello, Dashboard!</h1>
-        </div>
-        `;
+    document.querySelector(".content").innerHTML = `<div><h1>Hello, Dashboard!</h1></div>`;
   }
 }
