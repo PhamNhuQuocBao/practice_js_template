@@ -1,1 +1,3 @@
-@forward "mixins.scss";
+@mixin transition($property: all, $duration: 0.15s, $ttf: ease-in-out) {
+  transition: $property $duration $ttf;
+}

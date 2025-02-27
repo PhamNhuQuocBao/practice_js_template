@@ -1,0 +1,63 @@
+@use "../abstracts/" as *;
+
+// Sidebar
+.sidebar {
+  max-width: 264px;
+  width: 100%;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    padding: 24px 20px;
+  }
+
+  &__menu {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    &__item {
+      padding: 12px 20px;
+      cursor: pointer;
+      color: $secondary;
+      font-size: 14px;
+      font-weight: 600;
+      @include transition();
+
+      &:hover {
+        background-color: $primary-light;
+        color: $primary;
+      }
+    }
+  }
+
+  .active {
+    position: relative;
+    &::before {
+      content: "";
+      height: 100%;
+      width: 5px;
+      background-color: $primary;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+// Container
+.container {
+  display: flex;
+  background-color: $grey-secondary;
+
+  .main {
+    padding: 24px;
+  }
+}
